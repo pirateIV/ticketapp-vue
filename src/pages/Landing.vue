@@ -1,7 +1,7 @@
-<script setup>
-import Hero from "../components/Landing/Hero.vue";
-</script>
-
 <template>
   <Hero />
 </template>
+
+<script setup lang="ts">
+import Hero from '../components/Hero.vue'
+</script>

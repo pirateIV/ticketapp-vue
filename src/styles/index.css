@@ -4,32 +4,27 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --container-root-max-w: 1440px; 
+  --container-root-max-w: 1440px;
 }
 
 html {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   -webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-html, body {
+html,
+body {
   font-family: "InterVar", system-ui, -apple-system;
 }
 
 body {
-  /* display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  flex-shrink: 0; */
   height: 100svh;
 }
 
 button {
   cursor: pointer;
 }
-
 
 .app-container {
   max-width: 90rem; /* 1440px */
