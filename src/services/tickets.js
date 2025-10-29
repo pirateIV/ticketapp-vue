@@ -1,7 +1,7 @@
 export class TicketService {
   static ticketKey = "ticketapp_tickets"
 
-  static addTicket(ticket: any) {
+  static addTicket(ticket) {
     const tickets = this.getTickets()
     const userId = ticket.user
 
@@ -13,13 +13,13 @@ export class TicketService {
     this.saveTickets(tickets)
   }
 
-  static editTicket(ticketId: string, updatedTicket: any) {
+  static editTicket(ticketId, updatedTicket) {
     const tickets = this.getTickets()
     let ticketFound = false
 
     for (const userId in tickets) {
       const userTickets = tickets[userId]
-      const ticketIndex = userTickets.findIndex((t: any) => t.id === ticketId)
+      const ticketIndex = userTickets.findIndex((t) => t.id === ticketId)
 
       if (ticketIndex !== -1) {
         userTickets[ticketIndex] = {
@@ -39,13 +39,13 @@ export class TicketService {
     return ticketFound
   }
 
-  static deleteTicket(ticketId: string) {
+  static deleteTicket(ticketId) {
     const tickets = this.getTickets()
     let ticketFound = false
 
     for (const userId in tickets) {
       const originalLength = tickets[userId].length
-      tickets[userId] = tickets[userId].filter((t: any) => t.id !== ticketId)
+      tickets[userId] = tickets[userId].filter((t) => t.id !== ticketId)
       if (tickets[userId].length < originalLength) {
         ticketFound = true
       }
@@ -68,16 +68,16 @@ export class TicketService {
     }
   }
 
-  static getTicketsByUser(userId: string) {
+  static getTicketsByUser(userId) {
     const tickets = this.getTickets()
     return tickets[userId] || []
   }
 
-  static getTicketById(ticketId: string) {
+  static getTicketById(ticketId) {
     const tickets = this.getTickets()
 
     for (const userId in tickets) {
-      const ticket = tickets[userId].find((t: any) => t.id === ticketId)
+      const ticket = tickets[userId].find((t) => t.id === ticketId)
       if (ticket) {
         return ticket
       }
@@ -86,7 +86,7 @@ export class TicketService {
     return null
   }
 
-  static saveTickets(tickets: any) {
+  static saveTickets(tickets) {
     try {
       localStorage.setItem(this.ticketKey, JSON.stringify(tickets))
     } catch (error) {

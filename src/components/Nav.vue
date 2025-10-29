@@ -22,13 +22,13 @@
             Signup
           </router-link>
         </li>
-        <li v-else>
+        <li v-if="isAuthenticated">
           <router-link to="/tickets">Tickets</router-link>
         </li>
-        <li v-else>
+        <li v-if="isAuthenticated">
           <router-link to="/dashboard">Dashboard</router-link>
         </li>
-        <li v-else>
+        <li v-if="isAuthenticated">
           <button
             class="bg-gray-900 text-white py-2 px-3 rounded-md"
             @click="logout"

@@ -5,7 +5,7 @@
 
       <div class="flex flex-1 text-right flex-col lg:flex-row justify-between items-center gap-4">
         <div class="text-gray-400 text-sm w-full">
-          © {{ new Date().getFullYear() }} TicketFlow.{' '}
+          © {{ new Date().getFullYear() }} TicketFlow.
           <span class="max-sm:hidden">All rights reserved.</span>
         </div>
       </div>
